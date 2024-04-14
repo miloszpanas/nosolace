@@ -18,8 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <NavigationBar />
-      <main className={inter.className}>{children}</main>
+      <body>
+        <NavigationBar />
+        <main
+          className={`${inter.className} flex min-h-screen flex-col items-center justify-between p-16`}>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
