@@ -9,9 +9,7 @@ export const mongoDb = async (): Promise<void> => {
 
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: "nosolace_store",
-      useNewUrlParser: true,
-      useUnifiedTopology: true
+      dbName: "nosolace_store"
     });
     isConnected = true;
     console.log("db connected");
