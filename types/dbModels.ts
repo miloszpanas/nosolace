@@ -1,4 +1,5 @@
 type ApparelItem = {
+  _id: string;
   name: string;
   availability: string;
   shipmentInfo: string;

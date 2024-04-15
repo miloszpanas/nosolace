@@ -6,7 +6,7 @@ import { NavigationButtons } from "@/components/navigation/navigationButtons";
 
 export const NavigationBar = () => {
   return (
-    <header className="flex items-center h-14 p-4 font-medium min-h-20">
+    <header className="sticky top-0 z-50 flex items-center h-14 p-4 font-medium min-h-20 bg-black shadow border-b border-b-1 border-solid">
       <Link className="flex items-center gap-1" href="/">
         <span className="font-semibold">No Solace</span>
       </Link>
