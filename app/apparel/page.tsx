@@ -14,7 +14,7 @@ const Apparel = async () => {
 
   return (
     <section>
-      <div className="grid gap-6 md:gap-8 w-full max-w-3xl mx-auto px-4">
+      <div className="grid gap-6 md:gap-8 w-full max-w-4xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
           <div className="grid gap-1">
             <h1 className="text-3xl font-bold tracking-tight">No Solace Black Metal Apparel</h1>
