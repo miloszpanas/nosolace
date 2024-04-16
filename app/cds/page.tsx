@@ -1,15 +1,10 @@
-const fetchCDs = async (): Promise<MusicItem[]> => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/cds`);
-    return res.json();
-  } catch (error) {
-    console.log(error);
-  }
-};
+import { ProductList } from "@/components/common/productList";
+import { fetchProductsData } from "@/utils/requests";
 
 const Cds = async () => {
-  const cdsData = await fetchCDs();
-  return <div>Cds</div>;
+  const cdsData = await fetchProductsData("cds");
+
+  return <ProductList items={cdsData} heading="No Solace CDs collection" />;
 };
 
 export default Cds;

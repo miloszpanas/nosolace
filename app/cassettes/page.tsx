@@ -1,15 +1,10 @@
-const fetchCassettes = async (): Promise<MusicItem[]> => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/cassettes`);
-    return res.json();
-  } catch (error) {
-    console.log(error);
-  }
-};
+import { ProductList } from "@/components/common/productList";
+import { fetchProductsData } from "@/utils/requests";
 
 const Cassettes = async () => {
-  const cassettesData = await fetchCassettes();
-  return <div>Cassettes</div>;
+  const cassettesData = await fetchProductsData("cassettes");
+
+  return <ProductList items={cassettesData} heading="No Solace Cassettes collection" />;
 };
 
 export default Cassettes;

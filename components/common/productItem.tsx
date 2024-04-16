@@ -1,18 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
+import { ProductItem } from "@/types/products";
 import ProductItemPlaceholder from "@/assets/images/cd_placeholder.png";
-import NoSolacePlaceholder from "@/assets/images/no_solace_placeholder.jpg";
-
-export type ProductItem = {
-  product: ApparelItem | MusicItem;
-};
 
 export const ProductItem = ({ product }: ProductItem) => {
   const { name, availability, price, shipmentInfo, _id } = product;
+  const pathname = usePathname();
+  const pathNameBit = pathname !== "/" ? pathname : "/recommended";
+
   return (
     <article className="grid gap-4 relative group">
-      <Link className="absolute inset-0 z-10" href="#">
+      <Link className="absolute inset-0 z-10" href={`${pathNameBit}/${_id}`}>
         <span className="sr-only">View</span>
       </Link>
       <figure>

@@ -1,15 +1,16 @@
-const fetchLongPlays = async (): Promise<MusicItem[]> => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/lps`);
-    return res.json();
-  } catch (error) {
-    console.log(error);
-  }
-};
+import { ProductList } from "@/components/common/productList";
+import { fetchProductsData } from "@/utils/requests";
 
 const LongPlays = async () => {
-  const longPlaysData = await fetchLongPlays();
-  return <div>LongPlays</div>;
+  const longPlaysData = await fetchProductsData("lps");
+
+  return (
+    <ProductList
+      items={longPlaysData}
+      heading="No Solace Long Plays collection"
+      productType="lps"
+    />
+  );
 };
 
 export default LongPlays;
